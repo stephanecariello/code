@@ -30,11 +30,11 @@ f.close()
 
 myZip.close()
 
-with open("list_files.zip","rb") as f:
+with open("list_nicknames.zip","rb") as f:
     st.download_button("Télécharger les documents",f,file_name="files.zip")
 
 if st.button("CLEAR"):
     del files
-    myZip=ZipFile("list_files.zip","w")
+    myZip=ZipFile("list_nicknames.zip","w")
     myZip.close()
 
