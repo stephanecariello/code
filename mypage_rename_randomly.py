@@ -7,7 +7,7 @@ from zipfile import ZipFile
 st.title("Welcome")
 
 # list of uploaded files
-files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True).split(" ")
+files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 
 
 list_nicknames=st.text_input("Surnoms:").split(" ")
