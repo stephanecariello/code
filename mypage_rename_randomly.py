@@ -1,10 +1,6 @@
 import streamlit as st
+import random
 from zipfile import ZipFile
-def changeFileName(file_name,nickname):
-    before=file_name.split(".")[0]
-    after=file_name.split(".")[1]
-    new_name=nickname+"."+after
-    return new_name
 
 
 # here the title   
@@ -19,11 +15,13 @@ list_nicknames=st.text_input("Surnoms:").split(" ")
 # zip file
 myZip=ZipFile("list_files.zip","w")
 
-for file in files:
+for file_name in files:
+    before=file_name.split(".")[0]
+    after=file_name.split(".")[1]
     nickname=''.join(random.sample(list_nicknames,1))
-    name=changeFileName(file.name,nickname)
+    new_name=nickname+"."+after
     list_nicknames.remove(nickname)
-    myZip.writestr(name,file.getvalue())
+    myZip.writestr(new_name,file_name.getvalue())
             
 
 myZip.close()
