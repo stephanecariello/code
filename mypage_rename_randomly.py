@@ -1,5 +1,12 @@
 import streamlit as st
 from zipfile import ZipFile
+def changeFileName(file_name,nickname):
+    before=file_name.split(".")[0]
+    after=file_name.split(".")[1]
+    nickname=''.join(random.sample(list_nicknames,1))
+    new_name=nickname+"."+after
+    list_nicknames.remove(nickname)
+    return new_name
 
 
 # here the title   
@@ -16,12 +23,8 @@ list_nicknames=st.text_input("Surnoms:").split(" ")
 myZip=ZipFile("list_files.zip","w")
 
 for file in files:
-    before=file_name.split(".")[0]
-    after=file_name.split(".")[1]
-    nickname=''.join(random.sample(list_nicknames,1))
-    new_name=nickname+"."+after
-    list_nicknames.remove(nickname)
-    myZip.writestr(new_name,file.getvalue())
+    name=changeFileName(file.name,nickname)
+    myZip.writestr(name,file.getvalue())
             
 
 myZip.close()
