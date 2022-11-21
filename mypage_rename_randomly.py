@@ -15,12 +15,12 @@ files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 
 
 list_nicknames=st.text_input("Surnoms:").split(" ")
-nickname=''.join(random.sample(list_nicknames,1))
 
 # zip file
 myZip=ZipFile("list_files.zip","w")
 
 for file in files:
+    nickname=''.join(random.sample(list_nicknames,1))
     name=changeFileName(file.name,nickname)
     list_nicknames.remove(nickname)
     myZip.writestr(name,file.getvalue())
