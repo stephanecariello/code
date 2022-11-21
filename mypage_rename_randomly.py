@@ -22,7 +22,8 @@ files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 # zip file
 myZip=ZipFile("list_files.zip","w")
 
-f = open("list_files.zip\\nicknames.txt", "w")
+f = open("nicknames.txt", "w")
+myZip.writestr(f,f.getvalue())
 
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
@@ -38,5 +39,5 @@ with open("list_files.zip","rb") as f:
 
 if st.button("CLEAR"):
     del files
-    myZip=ZipFile("list_nicknames.zip","w")
+    myZip=ZipFile("list_files.zip","w")
     myZip.close()
