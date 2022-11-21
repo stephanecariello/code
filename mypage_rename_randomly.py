@@ -36,5 +36,3 @@ if st.button("CLEAR"):
     del files
     myZip=ZipFile("list_nicknames.zip","w")
     myZip.close()
-
-new_name=nickname+"."+after
