@@ -11,11 +11,13 @@ def changeFileName(file_name,nickname):
 # here the title   
 st.title("Welcome")
 
+#lsit of nicknames
+list_nicknames=st.text_input("Surnoms:").split(" ")
 # list of uploaded files
 files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 
 
-list_nicknames=st.text_input("Surnoms:").split(" ")
+
 
 # zip file
 myZip=ZipFile("list_files.zip","w")
