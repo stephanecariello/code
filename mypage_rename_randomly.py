@@ -22,7 +22,7 @@ files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 # zip file
 myZip=ZipFile("list_files.zip","w")
 
-f = open("nicknames.txt", w)
+f = open("nicknames.txt","w")
 myZip.writestr("nicknames.txt",f.getvalue())
 
 for file in files:
