@@ -22,16 +22,14 @@ files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 # zip file
 myZip=ZipFile("list_files.zip","w")
 
-f = "nicknames.txt"
-myZip.writestr(f,f.getvalue())
+f = open("nicknames.txt", w)
 
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
-    f.write(file.name+" "+"="+" "+nickname+"\n")
-f.close()     
+    print(file.name+" "+"="+" "+nickname+"\n")     
 myZip.close()
 
 with open("list_files.zip","rb") as f:
