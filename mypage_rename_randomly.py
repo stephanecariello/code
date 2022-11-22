@@ -23,7 +23,7 @@ files=st.file_uploader("Sélectionnez les fichiers", accept_multiple_files=True)
 myZip=ZipFile("list_files.zip","w")
 
 f = open("nicknames.txt","w")
-myZip.write(f,f.getvalue())
+myZip.write(f)
 
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
