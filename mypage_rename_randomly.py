@@ -9,7 +9,7 @@ def changeFileName(file_name,nickname):
 
 
 # here the title   
-st.title("Welcome")
+st.title("Bienvenue")
 
 #lsit of nicknames
 list_nicknames=st.text_input("Surnoms:").split(" ")
