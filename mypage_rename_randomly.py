@@ -29,7 +29,9 @@ for file in files:
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
-    print(file.name+" "+"="+" "+nickname+"\n")     
+    f.write(before+" "+"="+" "+nickname+"\n")
+f.close()
+myZip.writestr("nicknames", f)
 myZip.close()
 
 with open("list_files.zip","rb") as f:
