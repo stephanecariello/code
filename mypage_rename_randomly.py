@@ -30,7 +30,7 @@ for file in files:
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
     b = file.name.split(".")[0]
-    f.write(b+" "+"="+" "+nickname+"\n")
+    f.write(nickname+" "+"="+" "+b+"\n")
 f.close()
  
 myZip.write("nicknames.txt")
