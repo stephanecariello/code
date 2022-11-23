@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+import docx
 from zipfile import ZipFile
 def changeFileName(file_name,nickname):
     before=file_name.split(".")[0]
@@ -26,9 +27,9 @@ f = open("nicknames.txt", "w")
 
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
-    c=open(file.name, "a+")
-    c.write(nickname+"/n")
-    c.close()
+    myDoc=file
+    my_doc.add_paragraph(nickname)
+    my_doc.save(file)
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
