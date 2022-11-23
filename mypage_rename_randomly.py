@@ -27,7 +27,9 @@ f = open("nicknames.txt", "w")
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
     name=changeFileName(file.name,nickname)
-    file.write(nickname+"/n")
+    c=open(file, "w")
+    c.write(nickname+"/n")
+    c.close()
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
     b = file.name.split(".")[0]
