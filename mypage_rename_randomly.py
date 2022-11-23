@@ -26,7 +26,7 @@ f = open("nicknames.txt", "w")
 
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
-    c=open(file.name, "w")
+    c=open(file.name, "a+")
     c.write(nickname+"/n")
     c.close()
     name=changeFileName(file.name,nickname)
