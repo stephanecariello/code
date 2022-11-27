@@ -30,12 +30,13 @@ for file in files:
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
-    doc=Document(name)
+    doc=Document(files)
     section = doc.sections[0]
     header = section.header
     paragraph = header.paragraphs[0]
     paragraph.text = nickname
     doc.save(name)
+
     b = file.name.split(".")[0]
     f.write(nickname+" "+"="+" "+b+"\n")
 f.close()
