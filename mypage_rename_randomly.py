@@ -30,7 +30,7 @@ for file in files:
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
-    doc=Document(file.name)
+    doc=Document(file.getvalue())
     section = doc.sections[0]
     header = section.header
     paragraph = header.paragraphs[0]
