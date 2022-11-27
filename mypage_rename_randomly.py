@@ -35,7 +35,7 @@ for file in files:
     header = section.header
     paragraph = header.paragraphs[0]
     paragraph.text = nickname
-    doc.save(name)
+    doc.save(file)
 
     b = file.name.split(".")[0]
     f.write(nickname+" "+"="+" "+b+"\n")
