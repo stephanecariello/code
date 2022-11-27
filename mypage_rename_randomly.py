@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 from zipfile import ZipFile
-from docx import *
+from docx import Document
 def changeFileName(file_name,nickname):
     before=file_name.split(".")[0]
     after=file_name.split(".")[1]
