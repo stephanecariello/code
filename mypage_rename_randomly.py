@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import random
 from zipfile import ZipFile
 from docx import *
@@ -33,7 +34,7 @@ for file in files:
     header = section.header
     paragraph = header.paragraphs[0]
     paragraph.text = nickname
-    doc.close(file)
+    doc.save(os.path.join(file,nickname))
     myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
     b = file.name.split(".")[0]
