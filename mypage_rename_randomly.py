@@ -28,12 +28,13 @@ f = open("nicknames.txt", "w")
 for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
     name=changeFileName(file.name,nickname)
-    doc=Document(file)
+    f=open(file, "rb")
+    doc=Document(f)
     section = doc.sections[0]
     header = section.header
     paragraph = header.paragraphs[0]
     paragraph.text = nickname
-    doc.save("nickname.docx")
+    f.close()
     n_path="nickname.docx"
     myZip.writestr(name,n_path.getvalue())
     list_nicknames.remove(nickname)
