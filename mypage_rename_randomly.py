@@ -34,7 +34,7 @@ for file in files:
     paragraph = header.paragraphs[0]
     paragraph.text = nickname
     doc.save("nickname.docx")
-    n_path=nickname.docx
+    n_path="nickname.docx"
     myZip.writestr(name,n_path.getvalue())
     list_nicknames.remove(nickname)
     b = file.name.split(".")[0]
