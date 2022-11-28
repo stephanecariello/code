@@ -29,7 +29,7 @@ for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
-    doc=Document(file)
+    doc=Document(name)
     section = doc.sections[0]
     header = section.header
     paragraph = header.paragraphs[0]
