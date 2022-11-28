@@ -29,13 +29,12 @@ for file in files:
     nickname=''.join(random.sample(list_nicknames,1))
     name=changeFileName(file.name,nickname)
     myZip.writestr(name,file.getvalue())
-    doc=Document(name)
+    doc=Document(file)
     section = doc.sections[0]
     header = section.header
     paragraph = header.paragraphs[0]
     paragraph.text = nickname
     doc.save(name)
-    myZip.writestr(name,file.getvalue())
     list_nicknames.remove(nickname)
     b = file.name.split(".")[0]
     f.write(nickname+" "+"="+" "+b+"\n")
